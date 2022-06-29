@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:client_451736023128-bk42ne9lug1folkcmnb0933avu9lslsf.apps.googleusercontent.com.plist">
+   </FileRef>
+   <FileRef
+      location = "group:YoutubeApiPlayer.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+</Workspace>
