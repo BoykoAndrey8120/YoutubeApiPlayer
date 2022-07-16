@@ -20,6 +20,7 @@ class VideosCollectionViewCell: UICollectionViewCell {
     func setup(video: Video) {
             if let urlImage = URL(string: video.url) {
             self.imageVideo.load(url: urlImage)
+                self.imageVideo.layer.cornerRadius = self.imageVideo.frame.width / 7.0
         }
         self.title.text = video.title
         self.count.text = video.count

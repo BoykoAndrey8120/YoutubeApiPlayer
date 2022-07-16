@@ -65,13 +65,14 @@ class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
         collectionVideos.dataSource = self
         collectionVideos.register(UINib(nibName: "VideosCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "VideosCollectionViewCell")
         
+        
     }
     
     override func viewDidLayoutSubviews() {
         // self.playerView.updateConstraints()
         playerView.applyGradient()
-        
-        
+        playerView.clipsToBounds = true
+        playerView.layer.cornerRadius = 10
     }
     
     func configureGoogleSignin() {

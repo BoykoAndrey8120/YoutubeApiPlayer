@@ -20,6 +20,7 @@ class ChannelCollectionViewCell: UICollectionViewCell {
     func setup(subscriptions: Subscriptions) {
             if let urlImage = URL(string: subscriptions.url) {
             self.imageChannel.load(url: urlImage)
+                self.imageChannel.layer.cornerRadius = self.imageChannel.frame.width/8.0
         }
         self.subscribers.text = subscriptions.channelTitle
         self.title.text = subscriptions.count
