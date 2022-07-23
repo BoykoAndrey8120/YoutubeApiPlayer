@@ -19,7 +19,8 @@ class PlaylistCollectionViewCell: UICollectionViewCell {
     func setup(playlist: Playlists) {
             if let urlImage = URL(string: playlist.url) {
             self.imagePlaylist.load(url: urlImage)
-                self.imagePlaylist.layer.cornerRadius = self.imagePlaylist.frame.width/8.0
+                self.imagePlaylist.clipsToBounds = true
+                self.imagePlaylist.layer.cornerRadius = 10
         }
         self.title.text = playlist.title
         self.count.text = playlist.id

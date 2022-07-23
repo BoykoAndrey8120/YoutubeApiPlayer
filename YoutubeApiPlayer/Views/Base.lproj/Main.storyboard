@@ -30,20 +30,20 @@
                                     <constraint firstAttribute="width" secondItem="den-JO-lxM" secondAttribute="height" multiplier="2" id="0HH-1I-o2Z"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1oI-K8-S9d">
-                                    <size key="itemSize" width="374" height="189"/>
+                                    <size key="itemSize" width="300" height="189"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Fz1-Tl-MSJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="189"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" id="Fz1-Tl-MSJ">
+                                        <rect key="frame" x="0.0" y="9.5" width="300" height="170"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Bxr-TG-RxT">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="189"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" id="Bxr-TG-RxT">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="170"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="374" height="189"/>
+                                        <size key="customSize" width="300" height="170"/>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -69,10 +69,10 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PlaylistCollectionViewCell" id="x1O-Xd-12s" customClass="PlaylistCollectionViewCell" customModule="YoutubeApiPlayer" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="PlaylistCollectionViewCell" id="x1O-Xd-12s" customClass="PlaylistCollectionViewCell" customModule="YoutubeApiPlayer" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="3" width="187" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="iFm-oz-9yf">
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" id="iFm-oz-9yf">
                                             <rect key="frame" x="0.0" y="0.0" width="187" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
@@ -87,10 +87,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iel-f5-SCV">
-                                <rect key="frame" x="18" y="532" width="378" height="189"/>
+                                <rect key="frame" x="18" y="532" width="378" height="126"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="iel-f5-SCV" secondAttribute="height" multiplier="2" id="vNb-2c-WHK"/>
+                                    <constraint firstAttribute="width" secondItem="iel-f5-SCV" secondAttribute="height" multiplier="3" id="vNb-2c-WHK"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0uf-4D-yL1">
                                     <size key="itemSize" width="157" height="128"/>
@@ -99,10 +99,10 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="VideosCollectionViewCell" id="bdk-rd-2v8" customClass="VideosCollectionViewCell" customModule="YoutubeApiPlayer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="25.5" width="138" height="138"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="VideosCollectionViewCell" id="bdk-rd-2v8" customClass="VideosCollectionViewCell" customModule="YoutubeApiPlayer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="-6" width="138" height="138"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="w4J-AA-Yeg">
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" insetsLayoutMarginsFromSafeArea="NO" id="w4J-AA-Yeg">
                                             <rect key="frame" x="0.0" y="0.0" width="138" height="138"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>

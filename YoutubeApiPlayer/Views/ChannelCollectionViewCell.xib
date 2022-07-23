@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CA6-go-EA7">
-                        <rect key="frame" x="0.0" y="0.0" width="215" height="149"/>
+                        <rect key="frame" x="5" y="10" width="205" height="129"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kyL-2g-bTj">
                         <rect key="frame" x="10" y="127" width="78" height="12"/>
@@ -37,12 +37,12 @@
             <constraints>
                 <constraint firstItem="kyL-2g-bTj" firstAttribute="top" secondItem="ZG3-pn-h1H" secondAttribute="bottom" constant="4" id="3s1-Hu-iUf"/>
                 <constraint firstAttribute="bottom" secondItem="kyL-2g-bTj" secondAttribute="bottom" constant="10" id="5K3-hj-rI5"/>
-                <constraint firstAttribute="trailing" secondItem="CA6-go-EA7" secondAttribute="trailing" id="I34-Mh-p31"/>
                 <constraint firstItem="kyL-2g-bTj" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="IUc-7u-ztj"/>
-                <constraint firstItem="CA6-go-EA7" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="bWb-BH-mTW"/>
-                <constraint firstItem="CA6-go-EA7" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fmu-uG-shs"/>
-                <constraint firstAttribute="bottom" secondItem="CA6-go-EA7" secondAttribute="bottom" id="kI0-z7-Lmr"/>
+                <constraint firstItem="CA6-go-EA7" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="TQl-y1-xMB"/>
+                <constraint firstAttribute="trailing" secondItem="CA6-go-EA7" secondAttribute="trailing" constant="5" id="fYX-f3-Rkt"/>
+                <constraint firstAttribute="bottom" secondItem="CA6-go-EA7" secondAttribute="bottom" constant="10" id="knC-e2-Iwq"/>
                 <constraint firstItem="ZG3-pn-h1H" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="nee-aO-wkk"/>
+                <constraint firstItem="CA6-go-EA7" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="seA-uG-ofw"/>
             </constraints>
             <size key="customSize" width="215" height="149"/>
             <connections>

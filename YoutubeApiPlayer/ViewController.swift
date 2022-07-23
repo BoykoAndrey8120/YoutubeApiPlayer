@@ -38,6 +38,7 @@ class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
     let bag = DisposeBag()
     var playerIsActive = false
     var videoIsActive = false
+    var channelId = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,7 +99,7 @@ class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
     
     // List up to 10 files in Drive
     func fetchSubscription() {
-        let query = GTLRYouTubeQuery_SubscriptionsList.query(withPart: "snippet")
+        let query = GTLRYouTubeQuery_SubscriptionsList.query(withPart: "snippet, subscriberSnippet")
         query.mine = true
         service.executeQuery(query,
                              delegate: self,
@@ -119,7 +120,7 @@ class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
             for sub in subscription {
                 let item = Subscriptions(
                     channelTitle: sub.snippet?.title ?? "",
-                    channelId: sub.identifier ?? "",
+                    channelId: sub.snippet?.resourceId?.channelId ?? "",
                     url: sub.snippet?.thumbnails?.high?.url ?? "",
                     count: sub.contentDetails?.newItemCount?.stringValue ?? "")
                 self.arrayOfSubscription.append(item)
@@ -129,10 +130,77 @@ class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
         observable.subscribe { event in
             if event.isCompleted {
                 self.collectionChannel.reloadData()
+                self.fetchChannal()
+                print(self.arrayOfSubscription.map{$0.channelId})
             }
         }.disposed(by: bag)
+        
         self.fetchPlaylists()
     }
+    
+    func fetchChannal() {
+        for i in arrayOfSubscription {
+//            DispatchQueue.main.async { [self] in
+                let qvery = GTLRYouTubeQuery_ChannelsList.query(withPart: "statistics")
+                qvery.identifier = i.channelId
+                channelId = i.channelId
+                service.executeQuery(qvery,
+                                     delegate: self,
+                                     didFinish: #selector(displayResultWithTicketChannel(ticket:finishedWithObject:error:)))
+            }
+//        }
+    }
+    
+    @objc func displayResultWithTicketChannel(
+        ticket: GTLRServiceTicket,
+        finishedWithObject response: GTLRYouTube_ChannelListResponse,
+        error : NSError?) {
+        if let error = error {
+            showAlert(title: "Error", message: error.localizedDescription)
+            return
+        }
+        var index = 0
+        var value = ""
+//    DispatchQueue.main.async { [self] in
+//        if let channels = response.items, !channels.isEmpty {
+//            if let countViews = channels.map({$0.statistics?.commentCount?.stringValue}).first ?? "" {
+//                for (index, sub) in arrayOfSubscription.enumerated() {
+//                    if self.channelId  == sub.channelId {
+//                        self.arrayOfSubscription[index].count = countViews
+//                        print("==++++++++++=========++++++\(self.arrayOfSubscription[index].count)")
+//                    } else {
+//                        continue
+//                    }
+//            }
+//            }
+        if let channels = response.items, !channels.isEmpty {
+            for channel in channels {
+                for (ind, sub) in arrayOfSubscription.enumerated() {
+                    if self.channelId == sub.channelId {
+                        index = ind
+                        value = channel.statistics?.commentCount?.stringValue ?? ""
+                    }
+                }
+            }
+           
+                self.arrayOfSubscription[index].count = value
+           
+//            for channel in channels {
+//                arrayOfSubscription.map{ @escaping  in
+//                    if $0.channelId == channel.identifier {
+//                    $0.count = channel.statistics?.subscriberCount?.stringValue ?? ""
+//                }}
+            let observable = Observable.just(arrayOfSubscription)
+                   observable.subscribe { event in
+                       if event.isCompleted {
+                           self.collectionChannel.reloadData()
+                       }
+                   }.disposed(by: bag)
+            print(self.arrayOfSubscription.map{$0.count})
+        }
+            print(arrayOfSubscription.map{$0.count})
+    }
+        
     
     func fetchPlaylists() {
         let query = GTLRYouTubeQuery_PlaylistsList.query(withPart: "snippet, contentDetails")
@@ -141,6 +209,7 @@ class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
                              delegate: self,
                              didFinish: #selector(displayResultWithTicketPlaylists(ticket:finishedWithObject:error:)))
     }
+    
     
     // Process the response and display output
     @objc func displayResultWithTicketPlaylists(
@@ -308,6 +377,8 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
                 return UICollectionViewCell()
             }
             cell3.setup(video: arrayOfVideos[indexPath.item])
+//            cell3.imageVideo.clipsToBounds = true
+//            cell3.imageVideo.layer.cornerRadius = 10
             return cell3
         } else {
             return UICollectionViewCell()
